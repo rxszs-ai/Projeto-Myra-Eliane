@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Instituto Myra Eliane</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+<img src="imagens/logo.png">
+
+<h2>Instituto Myra Eliane</h2>
+
+</div>
+
+<nav>
+
+<a onclick="scrollSection('inicio')">Início</a>
+<a onclick="scrollSection('sobre')">Sobre</a>
+<a onclick="scrollSection('estrutura')">Equipamentos</a>
+<a onclick="scrollSection('noticias')">Notícias</a>
+<a onclick="scrollSection('contato')">Fale Conosco</a>
+
+</nav>
+
+</header>
+
+
+<section id="inicio">
+
+<img src="imagens/banner.jpg" class="banner">
+
+</section>
+
+
+
+<section id="sobre" class="secao">
+
+<h2>Sobre o Instituto</h2>
+
+<p>
+
+O Instituto Myra Eliane é um complexo educacional voltado
+ao desenvolvimento social e humano.
+
+O espaço reúne creche, centro cultural e centro
+de capacitação profissional voltados à educação
+e transformação social.
+
+</p>
+
+</section>
+
+
+
+<section id="estrutura" class="secao fundo">
+
+<h2>Nossa Estrutura</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="imagens/creche.jpg">
+
+<h3>Creche</h3>
+
+<p>Educação infantil com estrutura moderna.</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="imagens/capacitacao.jpg">
+
+<h3>Capacitação Profissional</h3>
+
+<p>Cursos voltados ao mercado de trabalho.</p>
+
+</div>
+
+
+<div class="card">
+
+<img src="imagens/cultural.jpg">
+
+<h3>Centro Cultural</h3>
+
+<p>Espaço dedicado à arte e cultura.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="noticias" class="secao">
+
+<h2 class="titulo-noticias">Últimas Notícias</h2>
+
+<div class="noticias">
+
+
+<div class="noticia" onclick="abrirNoticia(0)">
+
+<img src="imagens/noticia1.jpg">
+
+<h3>
+Espaço Cultural Arandu conclui formações do projeto Barca
+</h3>
+
+<button>Leia Mais →</button>
+
+</div>
+
+
+
+<div class="noticia" onclick="abrirNoticia(1)">
+
+<img src="imagens/noticia2.jpg">
+
+<h3>
+CEI Olga e Parsifal Barroso celebra seis anos de educação
+</h3>
+
+<button>Leia Mais →</button>
+
+</div>
+
+
+
+<div class="noticia" onclick="abrirNoticia(2)">
+
+<img src="imagens/noticia3.jpg">
+
+<h3>
+Centro de Formação realiza projeto Mulheres de Negócios
+</h3>
+
+<button>Leia Mais →</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section id="contato" class="secao fundo">
+
+<h2>Fale Conosco</h2>
+
+<p><b>Telefone:</b> (85) 3231-2634</p>
+
+<p><b>Email:</b> contato@myraeliane.org</p>
+
+<p><b>Fortaleza - CE</b></p>
+
+</section>
+
+
+
+<footer>
+
+<p>Instituto Myra Eliane © 2026</p>
+
+</footer>
+
+
+
+<div id="modal">
+
+<div class="modal-conteudo">
+
+<span onclick="fecharModal()">X</span>
+
+<h2 id="modal-titulo"></h2>
+
+<img id="modal-img">
+
+<p id="modal-texto"></p>
+
+</div>
+
+</div>
+
+
+
+<script src="java/script.js"></script>
+
+</body>
+
+</html>
