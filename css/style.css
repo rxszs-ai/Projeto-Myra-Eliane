@@ -573,8 +573,12 @@ flex-direction:column;
 text-align:center;
 }
 
-.equipamento:nth-child(even){
-flex-direction:column;
+.equipamento-img{
+order:1;
+}
+
+.equipamento-texto{
+order:2;
 }
 
 }
