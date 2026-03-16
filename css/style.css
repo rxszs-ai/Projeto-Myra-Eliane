@@ -394,67 +394,161 @@ text-align:center;
 
 /* ================= BOTÃO SCROLL ================= */
 
-#scrollTopBtn{
-position:fixed;
-bottom:30px;
-right:30px;
-
-width:60px;
-height:60px;
-
-border:none;
-border-radius:50%;
-background:white;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-cursor:pointer;
-
-box-shadow:0 5px 15px rgba(0,0,0,0.25);
-transition:0.3s;
-z-index:900;
+/* ================= BOTÃO SCROLL (AGORA FUNCIONA NO MOBILE) ================= */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    z-index: 2000; /* Fica acima de tudo */
+    opacity: 0;
+    visibility: hidden;
 }
 
-#scrollTopBtn:hover{
-transform:scale(1.1);
+#scrollTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
-.progress-ring{
-position:absolute;
-top:0;
-left:0;
-width:60px;
-height:60px;
-
-transform:rotate(-90deg);
+#scrollTopBtn:hover {
+    transform: translateY(-5px);
 }
 
-.progress-ring-bg{
-fill:none;
-stroke:#e5e5e5;
-stroke-width:4;
+.progress-ring {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: rotate(-90deg);
 }
 
-.progress-ring-circle{
-fill:none;
-stroke:#0b2c66;
-stroke-width:4;
-
-stroke-dasharray:163;
-stroke-dashoffset:163;
-
-transition:stroke-dashoffset 0.15s linear;
+.progress-ring-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 4;
 }
 
-.arrow{
-position:relative;
-z-index:2;
+.progress-ring-circle {
+    fill: none;
+    stroke: #0f2a66;
+    stroke-width: 4;
+    stroke-dasharray: 144.5; /* Ajustado para o novo raio */
+    stroke-dashoffset: 144.5;
+    transition: stroke-dashoffset 0.1s linear;
+}
 
-font-size:20px;
-font-weight:bold;
-color:#0b2c66;
+.arrow {
+    font-size: 18px;
+    color: #0f2a66;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* ================= MENU MOBILE (ESTILO) ================= */
+/* ================= NOVO DESIGN MENU MOBILE ================= */
+
+/* ================= MENU MOBILE (GAVETA LATERAL) ================= */
+
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido fora da tela */
+    width: 75%;    /* Ocupa apenas uma área lateral */
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2500;
+}
+
+/* Overlay para escurecer o fundo quando o menu abrir */
+.menu-mobile.ativo {
+    right: 0;
+}
+
+/* Estilo dos Botões dentro da Gaveta */
+.menu-mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-mobile a {
+    text-decoration: none;
+    color: #0f2a66;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 25px;
+    background: #f5f7ff;
+    border-radius: 12px; /* Estilo pílula moderna */
+    border: 1px solid rgba(15, 42, 102, 0.05);
+    transition: 0.3s;
+    
+    /* Preparação para Animação de Cascata */
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+/* Animação em Cascata quando Ativo */
+.menu-mobile.ativo a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-mobile.ativo a:nth-child(1) { transition-delay: 0.1s; }
+.menu-mobile.ativo a:nth-child(2) { transition-delay: 0.15s; }
+.menu-mobile.ativo a:nth-child(3) { transition-delay: 0.2s; }
+.menu-mobile.ativo a:nth-child(4) { transition-delay: 0.25s; }
+.menu-mobile.ativo a:nth-child(5) { transition-delay: 0.3s; }
+.menu-mobile.ativo a:nth-child(6) { transition-delay: 0.35s; }
+
+.menu-mobile a:hover {
+    background: #0f2a66;
+    color: #fff;
+}
+
+/* Ajuste no Botão Hamburguer para não sumir */
+.menu-mobile-btn {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 3000; /* Sempre acima do menu */
+    width: 45px;
+    height: 45px;
+    background: #0f2a66;
+    border-radius: 8px;
+    display: none; /* Aparece no Mobile via Media Query */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+@media (max-width: 900px) {
+    .menu-mobile-btn { display: flex; }
+}
+
+/* Botão de fechar (X) - Se você quiser adicionar no HTML depois */
+.fechar-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+    color: #0f2a66;
+    cursor: pointer;
 }
 /* ================= ANIMAÇÕES ================= */
 
@@ -612,7 +706,7 @@ gap:6px;
 
 cursor:pointer;
 
-z-index:1001;
+z-index:1500;
 
 box-shadow:0 6px 20px rgba(0,0,0,0.25);
 }

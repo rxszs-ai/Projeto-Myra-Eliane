@@ -1,137 +1,140 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleção de Elementos
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    const circle = document.querySelector(".progress-ring-circle");
+    const modal = document.getElementById("modal");
+    const menuMobile = document.getElementById("menuMobile");
 
-/* SCROLL SUAVE */
+    // ================= CONFIGURAÇÃO DO CÍRCULO DE PROGRESSO =================
+    // Cálculo baseado em um raio de 23px (para um botão de 50px de largura)
+    const radius = 23; 
+    const circumference = 2 * Math.PI * radius;
 
-window.scrollSection = function(id){
+    if (circle) {
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = circumference;
+    }
 
-const section = document.getElementById(id)
+    function setProgress(percent) {
+        if (!circle) return;
+        const offset = circumference - (percent * circumference);
+        circle.style.strokeDashoffset = offset;
+    }
 
-if(section){
-section.scrollIntoView({
-behavior:"smooth"
-})
-}
+    // ================= SCROLL SUAVE (LINKS E BOTÕES) =================
+    window.scrollSection = function(id) {
+        const section = document.getElementById(id);
+        if (section) {
+            // Fecha o menu mobile se estiver aberto ao clicar em um link
+            if (menuMobile && menuMobile.classList.contains("ativo")) {
+                menuMobile.classList.remove("ativo");
+            }
+            
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    };
 
-}
+    // ================= CONTROLE DO BOTÃO FLUTUANTE (SUBIR) =================
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollTop / scrollHeight;
 
+        // Atualiza o progresso visual no círculo
+        setProgress(progress);
 
-/* MENU MOBILE */
+        // Mostra o botão apenas após rolar 300px (evita poluição visual no início)
+        if (scrollTop > 300) {
+            scrollBtn.style.opacity = "1";
+            scrollBtn.style.visibility = "visible";
+            scrollBtn.style.transform = "scale(1)";
+        } else {
+            scrollBtn.style.opacity = "0";
+            scrollBtn.style.visibility = "hidden";
+            scrollBtn.style.transform = "scale(0.8)";
+        }
+    });
 
-window.toggleMenu = function(){
+    if (scrollBtn) {
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 
-const menu = document.getElementById("menuMobile")
+    // ================= MENU MOBILE =================
+    window.toggleMenu = function() {
+    const menuMobile = document.getElementById("menuMobile");
+    const btnMenu = document.getElementById("btnMenu");
+    
+    if (menuMobile) {
+        menuMobile.classList.toggle("ativo");
+        
+        // Bloqueia o scroll da página ao abrir o menu
+        if (menuMobile.classList.contains("ativo")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }
+};
 
-if(menu){
-menu.classList.toggle("ativo")
-}
+// Fecha o menu se o usuário clicar na área escura (fora da gaveta)
+document.addEventListener("click", (e) => {
+    const menu = document.getElementById("menuMobile");
+    const btn = document.getElementById("btnMenu");
+    
+    if (menu.classList.contains("ativo") && !menu.contains(e.target) && !btn.contains(e.target)) {
+        toggleMenu();
+    }
+});
+    // ================= SISTEMA DE NOTÍCIAS (MODAL) =================
+    const noticias = [
+        {
+            titulo: "Espaço Cultural Arandu conclui formações",
+            img: "imagens/noticia1.jpg",
+            texto: "O Espaço Cultural Arandu concluiu formações do projeto Barca em parceria com a Porto Iracema das Artes, promovendo o desenvolvimento artístico na região."
+        },
+        {
+            titulo: "CEI Olga e Parsifal Barroso celebra seis anos",
+            img: "imagens/noticia2.jpg",
+            texto: "Comemorando seis anos de excelência, o CEI Olga e Parsifal Barroso reafirma seu compromisso com a educação integral e os valores humanos na primeira infância."
+        },
+        {
+            titulo: "Projeto Mulheres de Negócios",
+            img: "imagens/noticia3.jpg",
+            texto: "O Centro de Formação Profissional Yolanda e Edson Queiroz realizou mais uma edição do projeto focado no empreendedorismo feminino."
+        }
+    ];
 
-}
+    window.abrirNoticia = function(index) {
+        if (!modal) return;
 
+        const info = noticias[index];
+        document.getElementById("modal-titulo").innerText = info.titulo;
+        document.getElementById("modal-img").src = info.img;
+        document.getElementById("modal-texto").innerText = info.texto;
 
-/* NOTÍCIAS */
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden"; // Trava o scroll da página ao abrir
+    };
 
-const noticias = [
+    window.fecharModal = function() {
+        if (modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Libera o scroll
+        }
+    };
 
-{
-titulo:"Espaço Cultural Arandu conclui formações",
-img:"imagens/noticia1.jpg",
-texto:"O Espaço Cultural Arandu concluiu formações do projeto Barca em parceria com a Porto Iracema das Artes."
-},
-
-{
-titulo:"CEI Olga e Parsifal Barroso celebra seis anos",
-img:"imagens/noticia2.jpg",
-texto:"O CEI Olga e Parsifal Barroso comemorou seis anos de atividades voltadas à educação infantil."
-},
-
-{
-titulo:"Projeto Mulheres de Negócios",
-img:"imagens/noticia3.jpg",
-texto:"O Centro de Formação Profissional realizou mais uma edição do projeto Mulheres de Negócios."
-}
-
-]
-
-
-/* ABRIR NOTÍCIA */
-
-window.abrirNoticia = function(i){
-
-const modal = document.getElementById("modal")
-
-modal.style.display="flex"
-
-document.getElementById("modal-titulo").innerText = noticias[i].titulo
-document.getElementById("modal-img").src = noticias[i].img
-document.getElementById("modal-texto").innerText = noticias[i].texto
-
-}
-
-
-/* FECHAR MODAL */
-
-window.fecharModal = function(){
-
-document.getElementById("modal").style.display="none"
-
-}
-
-
-/* FECHAR CLICANDO FORA */
-
-window.addEventListener("click", function(event){
-
-const modal = document.getElementById("modal")
-
-if(event.target === modal){
-modal.style.display = "none"
-}
-
-})
-
-
-/* BOTÃO SUBIR */
-
-const circle = document.querySelector("#scrollTopBtn .progress-ring-circle")
-const button = document.getElementById("scrollTopBtn")
-
-if(circle && button){
-
-const radius = circle.r.baseVal.value
-const circumference = 2 * Math.PI * radius
-
-circle.style.strokeDasharray = circumference
-circle.style.strokeDashoffset = circumference
-
-
-function setProgress(percent){
-
-const offset = circumference - (percent * circumference)
-circle.style.strokeDashoffset = offset
-
-}
-
-window.addEventListener("scroll", function(){
-
-const scrollTop = window.scrollY
-const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
-
-const progress = scrollTop / scrollHeight
-
-setProgress(progress)
-
-})
-
-
-button.addEventListener("click", function(){
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-})
-
-})
-
-}
-
-})
+    // Fechar modal ao clicar fora do conteúdo
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            fecharModal();
+        }
+    });
+});
