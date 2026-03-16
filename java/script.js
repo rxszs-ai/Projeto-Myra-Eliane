@@ -1,13 +1,29 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-
-/* SCROLL SUAVE PARA SEÇÕES */
+/* SCROLL SUAVE */
 
 window.scrollSection = function(id){
 
-document.getElementById(id).scrollIntoView({
+const section = document.getElementById(id)
+
+if(section){
+section.scrollIntoView({
 behavior:"smooth"
 })
+}
+
+}
+
+
+/* MENU MOBILE */
+
+window.toggleMenu = function(){
+
+const menu = document.getElementById("menuMobile")
+
+if(menu){
+menu.classList.toggle("ativo")
+}
 
 }
 
@@ -41,7 +57,9 @@ texto:"O Centro de Formação Profissional realizou mais uma edição do projeto
 
 window.abrirNoticia = function(i){
 
-document.getElementById("modal").style.display="flex"
+const modal = document.getElementById("modal")
+
+modal.style.display="flex"
 
 document.getElementById("modal-titulo").innerText = noticias[i].titulo
 document.getElementById("modal-img").src = noticias[i].img
@@ -59,7 +77,7 @@ document.getElementById("modal").style.display="none"
 }
 
 
-/* FECHAR MODAL CLICANDO FORA */
+/* FECHAR CLICANDO FORA */
 
 window.addEventListener("click", function(event){
 
@@ -72,8 +90,7 @@ modal.style.display = "none"
 })
 
 
-
-/* BOTÃO SCROLL TO TOP */
+/* BOTÃO SUBIR */
 
 const circle = document.querySelector("#scrollTopBtn .progress-ring-circle")
 const button = document.getElementById("scrollTopBtn")
@@ -93,7 +110,6 @@ const offset = circumference - (percent * circumference)
 circle.style.strokeDashoffset = offset
 
 }
-
 
 window.addEventListener("scroll", function(){
 
@@ -118,17 +134,4 @@ behavior:"smooth"
 
 }
 
-
 })
-
-function toggleMenu(){
-
-const menu = document.getElementById("menuMobile");
-
-if(menu.classList.contains("ativo")){
-menu.classList.remove("ativo");
-}else{
-menu.classList.add("ativo");
-}
-
-}
