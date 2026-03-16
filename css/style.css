@@ -578,3 +578,13 @@ max-width:500px;
 }
 
 }
+
+/* esconder botão de subir página no mobile */
+
+@media(max-width:900px){
+
+#scrollTopBtn{
+display:none;
+}
+
+}
