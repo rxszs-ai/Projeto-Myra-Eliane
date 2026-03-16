@@ -13,6 +13,7 @@ background:#eef2ff;
 overflow-x:hidden;
 }
 
+
 /* ================= HEADER ================= */
 
 header{
@@ -27,7 +28,7 @@ align-items:center;
 
 padding:18px 8%;
 
-background:#fff;
+background:white;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
 
 z-index:1000;
@@ -46,8 +47,8 @@ height:42px;
 
 nav{
 display:flex;
-align-items:center;
 gap:28px;
+align-items:center;
 }
 
 nav a{
@@ -71,11 +72,14 @@ background:#0f2a66;
 transition:0.3s;
 }
 
-nav a:hover
+nav a:hover{
+color:#0f2a66;
+}
 
 nav a:hover::after{
 width:100%;
 }
+
 
 /* ================= BANNER ================= */
 
@@ -85,8 +89,8 @@ width:100%;
 height:450px;
 
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 
 overflow:hidden;
 }
@@ -96,6 +100,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 }
+
 
 /* ================= SEÇÕES ================= */
 
@@ -112,7 +117,7 @@ margin-bottom:25px;
 }
 
 .secao p{
-max-width:720px;
+max-width:700px;
 margin:auto;
 line-height:1.6;
 }
@@ -123,6 +128,7 @@ border-radius:25px;
 margin:60px auto;
 max-width:1200px;
 }
+
 
 /* ================= CARDS ================= */
 
@@ -135,9 +141,10 @@ gap:35px;
 }
 
 .card{
-background:#fff;
+background:white;
 border-radius:18px;
 overflow:hidden;
+
 text-align:center;
 
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
@@ -151,11 +158,21 @@ transform:translateY(-10px);
 box-shadow:0 18px 40px rgba(0,0,0,0.15);
 }
 
+/* imagens padrão (estrutura / equipamentos) */
+
 .card img{
 width:100%;
 height:200px;
 object-fit:cover;
 display:block;
+}
+
+/* logos das unidades */
+
+.card.logo img{
+height:120px;
+object-fit:contain;
+padding:15px;
 }
 
 .card h3{
@@ -166,9 +183,10 @@ font-size:18px;
 
 .card p{
 padding:10px 20px 25px;
-font-size:15px;
 line-height:1.6;
+font-size:15px;
 }
+
 
 /* ================= NOTÍCIAS ================= */
 
@@ -188,7 +206,7 @@ justify-items:center;
 width:100%;
 max-width:330px;
 
-background:#fff;
+background:white;
 border-radius:18px;
 overflow:hidden;
 
@@ -226,16 +244,18 @@ font-size:18px;
 
 .noticia button{
 margin:0 20px 22px;
+
 padding:10px 18px;
 
 border:none;
 border-radius:25px;
 
 background:#0f2a66;
-color:#fff;
+color:white;
 
 cursor:pointer;
 font-weight:500;
+
 transition:0.3s;
 }
 
@@ -243,6 +263,7 @@ transition:0.3s;
 background:#08173d;
 transform:scale(1.05);
 }
+
 
 /* ================= MODAL ================= */
 
@@ -257,14 +278,14 @@ height:100%;
 background:rgba(0,0,0,0.7);
 
 display:none;
-align-items:center;
 justify-content:center;
+align-items:center;
 
 padding:20px;
 }
 
 .modal-conteudo{
-background:#fff;
+background:white;
 padding:40px;
 
 border-radius:15px;
@@ -292,6 +313,7 @@ right:20px;
 font-size:24px;
 cursor:pointer;
 }
+
 
 /* ================= CONTATO ================= */
 
@@ -326,7 +348,7 @@ gap:15px;
 padding:12px;
 border-radius:10px;
 border:1px solid #ccc;
-font-family:"Poppins", sans-serif;
+font-family:Poppins;
 }
 
 .form-contato textarea{
@@ -341,7 +363,7 @@ border:none;
 border-radius:25px;
 
 background:#0f2a66;
-color:#fff;
+color:white;
 
 cursor:pointer;
 font-weight:500;
@@ -361,6 +383,7 @@ color:#0f2a66;
 text-align:center;
 }
 
+
 /* ================= BOTÃO SCROLL ================= */
 
 #scrollTopBtn{
@@ -373,8 +396,7 @@ height:60px;
 
 border:none;
 border-radius:50%;
-
-background:#fff;
+background:white;
 
 display:flex;
 align-items:center;
@@ -426,6 +448,7 @@ font-weight:bold;
 color:#0b2c66;
 }
 
+
 /* ================= ANIMAÇÕES ================= */
 
 @keyframes fadeUp{
@@ -456,6 +479,7 @@ transform:scale(1);
 
 }
 
+
 /* ================= RESPONSIVO ================= */
 
 @media(max-width:900px){
@@ -483,6 +507,7 @@ grid-template-columns:1fr;
 }
 
 }
+
 
 /* ================= MOBILE ================= */
 
@@ -522,63 +547,26 @@ padding:25px;
 
 }
 
-/* ================= EQUIPAMENTOS ================= */
+@media(max-width:900px){
 
 .equipamento{
-display:flex;
+flex-direction:column !important;
 align-items:center;
-justify-content:center;
-gap:60px;
-
-padding:100px 8%;
-max-width:1200px;
-margin:auto;
+text-align:center;
+gap:30px;
 }
 
 .equipamento:nth-child(even){
-flex-direction:row-reverse;
+flex-direction:column !important;
 }
 
 .equipamento-img{
-flex:1;
+width:100%;
 }
 
 .equipamento-img img{
 width:100%;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-.equipamento-texto{
-flex:1;
-}
-
-.equipamento-texto h2{
-margin-bottom:20px;
-font-size:30px;
-}
-
-.equipamento-texto p{
-line-height:1.7;
-font-size:16px;
-}
-
-
-/* RESPONSIVO */
-
-@media(max-width:900px){
-
-.equipamento{
-flex-direction:column;
-text-align:center;
-}
-
-.equipamento-img{
-order:1;
-}
-
-.equipamento-texto{
-order:2;
+max-width:500px;
 }
 
 }
