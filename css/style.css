@@ -64,10 +64,8 @@ content:"";
 position:absolute;
 bottom:-4px;
 left:0;
-
 width:0;
 height:2px;
-
 background:#0f2a66;
 transition:0.3s;
 }
@@ -91,7 +89,6 @@ height:450px;
 display:flex;
 justify-content:center;
 align-items:center;
-
 overflow:hidden;
 }
 
@@ -132,8 +129,6 @@ max-width:1200px;
 
 /* ================= CARDS ================= */
 
-/* ================= CARDS ================= */
-
 .cards{
 margin-top:60px;
 
@@ -164,15 +159,11 @@ transform:translateY(-10px);
 box-shadow:0 18px 40px rgba(0,0,0,0.15);
 }
 
-/* imagem sempre em cima */
-
 .card img{
 width:100%;
 height:auto;
 display:block;
 }
-
-/* conteúdo do card */
 
 .card h3{
 margin-top:15px;
@@ -185,8 +176,6 @@ padding:10px 20px 25px;
 line-height:1.6;
 font-size:15px;
 }
-
-/* logos das unidades */
 
 .card.logo img{
 max-height:120px;
@@ -222,7 +211,6 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 cursor:pointer;
 transition:0.35s;
-
 animation:fadeUp 0.8s ease;
 }
 
@@ -375,7 +363,6 @@ color:white;
 
 cursor:pointer;
 font-weight:500;
-
 transition:0.3s;
 }
 
@@ -426,7 +413,6 @@ top:0;
 left:0;
 width:60px;
 height:60px;
-
 transform:rotate(-90deg);
 }
 
@@ -455,6 +441,7 @@ font-size:20px;
 font-weight:bold;
 color:#0b2c66;
 }
+
 
 /* ================= ANIMAÇÕES ================= */
 
@@ -513,49 +500,6 @@ grid-template-columns:repeat(2,1fr);
 grid-template-columns:1fr;
 }
 
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:600px){
-
-.banner{
-height:220px;
-margin-top:130px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.noticias{
-display:flex;
-overflow-x:auto;
-
-scroll-snap-type:x mandatory;
-
-gap:20px;
-padding-bottom:10px;
-}
-
-.noticia{
-flex:0 0 85%;
-scroll-snap-align:center;
-}
-
-.titulo-noticias{
-font-size:30px;
-}
-
-.modal-conteudo{
-padding:25px;
-}
-
-}
-
-@media(max-width:900px){
-
 .equipamento{
 flex-direction:column !important;
 align-items:center;
@@ -576,14 +520,47 @@ width:100%;
 max-width:500px;
 }
 
-}
-
-/* esconder apenas o botão de subir página no mobile */
-
-@media(max-width:900px){
+/* esconder botão subir página no mobile */
 
 #scrollTopBtn{
-display:none !important;
+display:none;
+}
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+.banner{
+height:220px;
+margin-top:130px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.noticias{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+gap:20px;
+padding-bottom:10px;
+}
+
+.noticia{
+flex:0 0 85%;
+scroll-snap-align:center;
+}
+
+.titulo-noticias{
+font-size:30px;
+}
+
+.modal-conteudo{
+padding:25px;
 }
 
 }
