@@ -414,6 +414,7 @@ cursor:pointer;
 
 box-shadow:0 5px 15px rgba(0,0,0,0.25);
 transition:0.3s;
+z-index:900;
 }
 
 #scrollTopBtn:hover{
@@ -577,10 +578,60 @@ max-width:500px;
 
 }
 
+/* ================= ESCONDER SCROLL NO MOBILE ================= */
+
+@media(max-width:900px){
+
+#scrollTopBtn{
+display:none;
+}
+
+}
+
+/* ================= BOTÃO MENU MOBILE ================= */
+
+.menu-mobile-btn{
+
+position:fixed;
+bottom:30px;
+right:30px;
+
+width:60px;
+height:60px;
+
+border:none;
+border-radius:50%;
+
+background:#0f2a66;
+
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:6px;
+
+cursor:pointer;
+
+z-index:1001;
+
+box-shadow:0 6px 20px rgba(0,0,0,0.25);
+}
+
+.menu-mobile-btn span{
+width:22px;
+height:3px;
+background:white;
+border-radius:2px;
+}
+
 @media(max-width:900px){
 
 .menu-mobile-btn{
-bottom:100px;
+display:flex;
+}
+
+.menu-desktop{
+display:none;
 }
 
 }
