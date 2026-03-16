@@ -455,18 +455,6 @@ font-size:20px;
 font-weight:bold;
 color:#0b2c66;
 }
-
-/* esconder botão de subir página no mobile */
-
-@media(max-width:900px){
-
-#scrollTopBtn{
-display:none;
-}
-
-}
-
-
 /* ================= ANIMAÇÕES ================= */
 
 @keyframes fadeUp{
@@ -585,6 +573,14 @@ width:100%;
 .equipamento-img img{
 width:100%;
 max-width:500px;
+}
+
+}
+
+@media (max-width:900px){
+
+#scrollTopBtn{
+display:none !important;
 }
 
 }
