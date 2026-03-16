@@ -120,3 +120,15 @@ behavior:"smooth"
 
 
 })
+
+function toggleMenu(){
+
+const menu = document.getElementById("menuMobile");
+
+if(menu.classList.contains("ativo")){
+menu.classList.remove("ativo");
+}else{
+menu.classList.add("ativo");
+}
+
+}
