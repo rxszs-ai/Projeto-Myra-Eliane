@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
@@ -16,6 +17,8 @@
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
 <div class="logo">
@@ -23,19 +26,29 @@
 <h2>Instituto Myra Eliane</h2>
 </div>
 
-<nav>
+<nav class="menu-desktop">
 
-<a onclick="scrollSection('inicio')">Início</a>
-<a onclick="scrollSection('sobre')">Sobre</a>
-<a onclick="scrollSection('estrutura')">Estrutura</a>
-<a href="equipamentos.html">Equipamentos</a>
-<a onclick="scrollSection('noticias')">Notícias</a>
-<a onclick="scrollSection('contato')">Fale Conosco</a>
+<a onclick="scrollSection('inicio')">Início</a> <a onclick="scrollSection('sobre')">Sobre</a> <a onclick="scrollSection('estrutura')">Estrutura</a> <a href="equipamentos.html">Equipamentos</a> <a onclick="scrollSection('noticias')">Notícias</a> <a onclick="scrollSection('contato')">Fale Conosco</a>
 
 </nav>
 
 </header>
 
+<!-- MENU MOBILE -->
+
+<button class="menu-mobile-btn" onclick="toggleMenu()">
+
+<span></span> <span></span> <span></span>
+
+</button>
+
+<div class="menu-mobile" id="menuMobile">
+
+<a onclick="scrollSection('inicio');toggleMenu()">Início</a> <a onclick="scrollSection('sobre');toggleMenu()">Sobre</a> <a onclick="scrollSection('estrutura');toggleMenu()">Estrutura</a> <a href="equipamentos.html">Equipamentos</a> <a onclick="scrollSection('noticias');toggleMenu()">Notícias</a> <a onclick="scrollSection('contato');toggleMenu()">Fale Conosco</a>
+
+</div>
+
+<!-- BANNER -->
 
 <section id="inicio">
 
@@ -45,6 +58,7 @@
 
 </section>
 
+<!-- SOBRE -->
 
 <section id="sobre" class="secao">
 
@@ -57,10 +71,12 @@ ao desenvolvimento social e humano.
 O espaço reúne creche, centro cultural e centro
 de capacitação profissional voltados à educação
 e transformação social.
+
 </p>
 
 </section>
 
+<!-- ESTRUTURA -->
 
 <section id="estrutura" class="secao fundo">
 
@@ -90,6 +106,7 @@ e transformação social.
 
 </section>
 
+<!-- NOTÍCIAS -->
 
 <section id="noticias" class="secao">
 
@@ -119,6 +136,7 @@ e transformação social.
 
 </section>
 
+<!-- CONTATO -->
 
 <section id="contato" class="secao fundo">
 
@@ -140,7 +158,6 @@ loading="lazy">
 
 </div>
 
-
 <form class="form-contato" action="mailto:contato@myraeliane.org" method="post" enctype="text/plain">
 
 <h3 class="titulo-form">Envie sua mensagem</h3>
@@ -159,7 +176,7 @@ loading="lazy">
 
 </section>
 
-
+<!-- MODAL NOTÍCIAS -->
 
 <div id="modal">
 
@@ -177,6 +194,7 @@ loading="lazy">
 
 </div>
 
+<!-- BOTÃO SCROLL -->
 
 <button id="scrollTopBtn">
 
@@ -200,9 +218,15 @@ r="26"
 
 </button>
 
-
 <script src="java/script.js"></script>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menuMobile").classList.toggle("ativo");
+}
+
+</script>
 
 </body>
 </html>
-```
