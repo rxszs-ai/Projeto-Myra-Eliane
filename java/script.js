@@ -1,4 +1,9 @@
-function scrollSection(id){
+document.addEventListener("DOMContentLoaded", function(){
+
+
+/* SCROLL SUAVE PARA SEÇÕES */
+
+window.scrollSection = function(id){
 
 document.getElementById(id).scrollIntoView({
 behavior:"smooth"
@@ -7,8 +12,9 @@ behavior:"smooth"
 }
 
 
+/* NOTÍCIAS */
 
-let noticias = [
+const noticias = [
 
 {
 titulo:"Espaço Cultural Arandu conclui formações",
@@ -31,39 +37,86 @@ texto:"O Centro de Formação Profissional realizou mais uma edição do projeto
 ]
 
 
+/* ABRIR NOTÍCIA */
 
-function abrirNoticia(i){
+window.abrirNoticia = function(i){
 
 document.getElementById("modal").style.display="flex"
 
 document.getElementById("modal-titulo").innerText = noticias[i].titulo
-
 document.getElementById("modal-img").src = noticias[i].img
-
 document.getElementById("modal-texto").innerText = noticias[i].texto
 
 }
 
 
+/* FECHAR MODAL */
 
-function fecharModal(){
+window.fecharModal = function(){
 
 document.getElementById("modal").style.display="none"
 
 }
 
 
+/* FECHAR MODAL CLICANDO FORA */
 
-/* fechar modal clicando fora */
+window.addEventListener("click", function(event){
 
-window.onclick = function(event){
+const modal = document.getElementById("modal")
 
-let modal = document.getElementById("modal")
-
-if(event.target == modal){
-
+if(event.target === modal){
 modal.style.display = "none"
+}
+
+})
+
+
+
+/* BOTÃO SCROLL TO TOP */
+
+const circle = document.querySelector("#scrollTopBtn .progress-ring-circle")
+const button = document.getElementById("scrollTopBtn")
+
+if(circle && button){
+
+const radius = circle.r.baseVal.value
+const circumference = 2 * Math.PI * radius
+
+circle.style.strokeDasharray = circumference
+circle.style.strokeDashoffset = circumference
+
+
+function setProgress(percent){
+
+const offset = circumference - (percent * circumference)
+circle.style.strokeDashoffset = offset
 
 }
 
+
+window.addEventListener("scroll", function(){
+
+const scrollTop = window.scrollY
+const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+
+const progress = scrollTop / scrollHeight
+
+setProgress(progress)
+
+})
+
+
+button.addEventListener("click", function(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
+
+})
+
 }
+
+
+})

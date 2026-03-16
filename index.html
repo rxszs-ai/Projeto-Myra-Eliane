@@ -16,7 +16,6 @@
 
 <body>
 
-
 <header>
 
 <div class="logo">
@@ -28,7 +27,8 @@
 
 <a onclick="scrollSection('inicio')">Início</a>
 <a onclick="scrollSection('sobre')">Sobre</a>
-<a onclick="scrollSection('estrutura')">Equipamentos</a>
+<a onclick="scrollSection('estrutura')">Estrutura</a>
+<a href="equipamentos.html">Equipamentos</a>
 <a onclick="scrollSection('noticias')">Notícias</a>
 <a onclick="scrollSection('contato')">Fale Conosco</a>
 
@@ -36,8 +36,6 @@
 
 </header>
 
-
-<!-- BANNER -->
 
 <section id="inicio">
 
@@ -48,29 +46,21 @@
 </section>
 
 
-
-<!-- SOBRE -->
-
 <section id="sobre" class="secao">
 
 <h2>Sobre o Instituto</h2>
 
 <p>
-
 O Instituto Myra Eliane é um complexo educacional voltado
 ao desenvolvimento social e humano.
 
 O espaço reúne creche, centro cultural e centro
 de capacitação profissional voltados à educação
 e transformação social.
-
 </p>
 
 </section>
 
-
-
-<!-- ESTRUTURA -->
 
 <section id="estrutura" class="secao fundo">
 
@@ -79,44 +69,27 @@ e transformação social.
 <div class="cards">
 
 <div class="card">
-
-<img src="imagens/creche.jpg" alt="Creche">
-
+<img src="imagens/creche.jpg">
 <h3>Creche</h3>
-
 <p>Educação infantil com estrutura moderna.</p>
-
 </div>
 
-
 <div class="card">
-
-<img src="imagens/capacitacao.jpg" alt="Capacitação">
-
+<img src="imagens/capacitacao.jpg">
 <h3>Capacitação Profissional</h3>
-
 <p>Cursos voltados ao mercado de trabalho.</p>
-
 </div>
 
-
 <div class="card">
-
-<img src="imagens/cultural.jpg" alt="Centro Cultural">
-
+<img src="imagens/cultural.jpg">
 <h3>Centro Cultural</h3>
-
 <p>Espaço dedicado à arte e cultura.</p>
-
 </div>
 
 </div>
 
 </section>
 
-
-
-<!-- NOTÍCIAS -->
 
 <section id="noticias" class="secao">
 
@@ -125,21 +98,19 @@ e transformação social.
 <div class="noticias">
 
 <div class="noticia" onclick="abrirNoticia(0)">
-<img src="imagens/noticia1.jpg" alt="Notícia 1">
+<img src="imagens/noticia1.jpg">
 <h3>Espaço Cultural Arandu conclui formações do projeto Barca</h3>
 <button>Leia Mais →</button>
 </div>
 
-
 <div class="noticia" onclick="abrirNoticia(1)">
-<img src="imagens/noticia2.jpg" alt="Notícia 2">
+<img src="imagens/noticia2.jpg">
 <h3>CEI Olga e Parsifal Barroso celebra seis anos de educação</h3>
 <button>Leia Mais →</button>
 </div>
 
-
 <div class="noticia" onclick="abrirNoticia(2)">
-<img src="imagens/noticia3.jpg" alt="Notícia 3">
+<img src="imagens/noticia3.jpg">
 <h3>Centro de Formação realiza projeto Mulheres de Negócios</h3>
 <button>Leia Mais →</button>
 </div>
@@ -148,9 +119,6 @@ e transformação social.
 
 </section>
 
-
-
-<!-- CONTATO -->
 
 <section id="contato" class="secao fundo">
 
@@ -162,6 +130,7 @@ e transformação social.
 
 <p><b>Telefone:</b> (85) 3231-2634</p>
 <p><b>Email:</b> contato@myraeliane.org</p>
+<p><b>Instagram:</b> @myraeliane</p>
 <p><b>Fortaleza - CE</b></p>
 
 <iframe
@@ -192,8 +161,6 @@ loading="lazy">
 
 
 
-<!-- MODAL NOTÍCIA -->
-
 <div id="modal">
 
 <div class="modal-conteudo">
@@ -211,7 +178,31 @@ loading="lazy">
 </div>
 
 
+<button id="scrollTopBtn">
+
+<svg class="progress-ring" width="60" height="60">
+
+<circle class="progress-ring-bg"
+cx="30"
+cy="30"
+r="26"
+/>
+
+<circle class="progress-ring-circle"
+cx="30"
+cy="30"
+r="26"
+/>
+
+</svg>
+
+<span class="arrow">↑</span>
+
+</button>
+
+
 <script src="java/script.js"></script>
 
 </body>
 </html>
+```
