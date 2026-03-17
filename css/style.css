@@ -233,6 +233,10 @@ flex-wrap:wrap;
 
 }
 
+
+
+/* card */
+
 .noticia{
 
 width:320px;
@@ -258,7 +262,6 @@ object-fit:cover;
 }
 
 .noticia:hover img{
-filter:grayscale(0%);
 transform:scale(1.05);
 }
 
@@ -294,6 +297,41 @@ background:#08173d;
 transform:scale(1.05);
 }
 
+
+
+/* ================= MOBILE CARROSSEL ================= */
+
+@media(max-width:900px){
+
+.noticias{
+
+flex-wrap:nowrap;
+
+overflow-x:auto;
+
+justify-content:flex-start;
+
+scroll-snap-type:x mandatory;
+
+padding:10px;
+
+}
+
+.noticias::-webkit-scrollbar{
+display:none;
+}
+
+.noticia{
+
+min-width:280px;
+
+flex:0 0 auto;
+
+scroll-snap-align:center;
+
+}
+
+}
 
 /* ================= MODAL ================= */
 
