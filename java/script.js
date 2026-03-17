@@ -126,6 +126,44 @@ if (scrollBtn) {
         }
     ];
 
+    // ================= ESTRUTURA =================
+
+const estrutura = [
+
+    {
+        titulo: "Creche",
+        img: "imagens/creche.jpg",
+        texto: "A creche oferece educação infantil com estrutura moderna, salas climatizadas, área de recreação e equipe pedagógica especializada."
+    },
+
+    {
+        titulo: "Capacitação Profissional",
+        img: "imagens/capacitacao.jpg",
+        texto: "O centro de capacitação oferece cursos profissionalizantes voltados ao mercado de trabalho, promovendo inclusão e geração de renda."
+    },
+
+    {
+        titulo: "Centro Cultural",
+        img: "imagens/cultural.jpg",
+        texto: "O centro cultural é um espaço dedicado à arte, música, teatro e atividades educativas para a comunidade."
+    }
+
+];
+
+
+window.abrirEstrutura = function(index){
+
+    const info = estrutura[index];
+
+    document.getElementById("modal-titulo").innerText = info.titulo;
+    document.getElementById("modal-img").src = info.img;
+    document.getElementById("modal-texto").innerText = info.texto;
+
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+}
+
     window.abrirNoticia = function (index) {
         if (!modal) return;
 

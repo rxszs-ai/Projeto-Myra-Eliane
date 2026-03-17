@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Instituto Myra Eliane</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -12,173 +13,260 @@
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header>
-        <div class="logo">
-            <img src="imagens/logo.png" alt="Logo Instituto Myra Eliane">
-            <h2>Instituto Myra Eliane</h2>
-        </div>
 
-        <nav class="menu-desktop">
-            <a onclick="scrollSection('inicio')">Início</a> 
-            <a onclick="scrollSection('sobre')">Sobre</a> 
-            <a onclick="scrollSection('estrutura')">Estrutura</a> 
-            <a href="equipamentos.html">Equipamentos</a> 
-            <a onclick="scrollSection('noticias')">Notícias</a> 
-            <a onclick="scrollSection('contato')">Fale Conosco</a>
-        </nav>
-    </header>
+<!-- ================= HEADER ================= -->
 
-    <!-- ================= BOTÃO MENU MOBILE ================= -->
-    <button type="button" class="menu-mobile-btn" id="btnMenu" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+<header>
 
-    <!-- ================= MENU MOBILE ================= -->
-    <div class="menu-mobile" id="menuMobile">
-        <div class="menu-mobile-links">
-            <a onclick="scrollSection('inicio')">Início</a>
-            <a onclick="scrollSection('sobre')">Sobre</a>
-            <a onclick="scrollSection('estrutura')">Estrutura</a>
-            <a href="equipamentos.html">Equipamentos</a>
-            <a onclick="scrollSection('noticias')">Notícias</a>
-            <a onclick="scrollSection('contato')">Fale Conosco</a>
-        </div>
+    <div class="logo">
+        <img src="imagens/logo.png">
+        <h2>Instituto Myra Eliane</h2>
     </div>
 
-    <!-- ================= INÍCIO ================= -->
-    <section id="inicio">
-        <div class="banner">
-            <img src="imagens/banner.jpg" alt="Banner Instituto">
-        </div>
-    </section>
+    <nav class="menu-desktop">
+        <a onclick="scrollSection('inicio')">Início</a>
+        <a onclick="scrollSection('sobre')">Sobre</a>
+        <a onclick="scrollSection('estrutura')">Estrutura</a>
+        <a href="equipamentos.html">Equipamentos</a>
+        <a onclick="scrollSection('noticias')">Notícias</a>
+        <a onclick="scrollSection('contato')">Fale Conosco</a>
+    </nav>
 
-    <!-- ================= SOBRE ================= -->
-    <section id="sobre" class="secao">
-        <div class="card-institucional">
-            <h2>Sobre o Instituto</h2>
-            <p>
-                O Instituto Myra Eliane é um complexo educacional voltado ao desenvolvimento social e humano. 
-                O espaço reúne creche, centro cultural e centro de capacitação profissional voltados à educação e transformação social.
-            </p>
-        </div>
-    </section>
+</header>
 
-    <!-- ================= ESTRUTURA ================= -->
-    <section id="estrutura" class="secao fundo">
-        <h2>Nossa Estrutura</h2>
 
-        <div class="cards">
-            <div class="card">
-                <img src="imagens/creche.jpg" alt="Creche">
-                <h3>Creche</h3>
-                <p>Educação infantil com estrutura moderna.</p>
-            </div>
 
-            <div class="card">
-                <img src="imagens/capacitacao.jpg" alt="Capacitação Profissional">
-                <h3>Capacitação Profissional</h3>
-                <p>Cursos voltados ao mercado de trabalho.</p>
-            </div>
+<!-- ================= MENU MOBILE ================= -->
 
-            <div class="card">
-                <img src="imagens/cultural.jpg" alt="Centro Cultural">
-                <h3>Centro Cultural</h3>
-                <p>Espaço dedicado à arte e cultura.</p>
-            </div>
-        </div>
-    </section>
+<button class="menu-mobile-btn" id="btnMenu" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</button>
 
-    <!-- ================= NOTÍCIAS ================= -->
-    <section id="noticias" class="secao">
-        <h2 class="titulo-noticias">Últimas Notícias</h2>
 
-        <div class="noticias">
-            <div class="noticia" onclick="abrirNoticia(0)">
-                <img src="imagens/noticia1.jpg" alt="">
-                <h3>Espaço Cultural Arandu conclui formações do projeto Barca</h3>
-                <button>Leia Mais →</button>
-            </div>
+<div class="menu-mobile" id="menuMobile">
 
-            <div class="noticia" onclick="abrirNoticia(1)">
-                <img src="imagens/noticia2.jpg" alt="">
-                <h3>CEI Olga e Parsifal Barroso celebra seis anos de educação</h3>
-                <button>Leia Mais →</button>
-            </div>
+<div class="menu-mobile-links">
 
-            <div class="noticia" onclick="abrirNoticia(2)">
-                <img src="imagens/noticia3.jpg" alt="">
-                <h3>Centro de Formação realiza projeto Mulheres de Negócios</h3>
-                <button>Leia Mais →</button>
-            </div>
-        </div>
-    </section>
+<a onclick="scrollSection('inicio');toggleMenu()">Início</a>
+<a onclick="scrollSection('sobre');toggleMenu()">Sobre</a>
+<a onclick="scrollSection('estrutura');toggleMenu()">Estrutura</a>
+<a href="equipamentos.html">Equipamentos</a>
+<a onclick="scrollSection('noticias');toggleMenu()">Notícias</a>
+<a onclick="scrollSection('contato');toggleMenu()">Fale Conosco</a>
 
-    <!-- ================= CONTATO ================= -->
-    <section id="contato" class="secao fundo">
-        <h2>Fale Conosco</h2>
+</div>
 
-        <div class="contato-container">
-            <div class="contato-info">
-                <p><b>Telefone:</b> (85) 3231-2634</p>
-                <p><b>Email:</b> contato@myraeliane.org</p>
-                <p><b>Instagram:</b> @myraeliane</p>
-                <p><b>Fortaleza - CE</b></p>
+</div>
 
-                <iframe src="https://maps.google.com/maps?q=Av.%20Central%2C%20Araturi%2C%20Caucaia%20CE%20Instituto%20Myra%20Eliane&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-            </div>
 
-            <form class="form-contato" action="mailto:contato@myraeliane.org" method="post" enctype="text/plain">
-                <h3 class="titulo-form">Envie sua mensagem</h3>
 
-                <input type="text" name="nome" placeholder="Seu nome" required>
-                <input type="tel" name="telefone" placeholder="Seu telefone">
-                <textarea name="mensagem" placeholder="Digite sua mensagem" required></textarea>
+<!-- ================= BANNER ================= -->
 
-                <button type="submit">Enviar mensagem</button>
-            </form>
-        </div>
-    </section>
+<section id="inicio">
 
-    <!-- ================= MODAL ================= -->
-    <div id="modal">
-        <div class="modal-conteudo">
-            <span onclick="fecharModal()">✕</span>
-            <h2 id="modal-titulo"></h2>
-            <img id="modal-img" alt="">
-            <p id="modal-texto"></p>
-        </div>
-    </div>
+<div class="banner">
+<img src="imagens/banner.jpg">
+</div>
 
-    <!-- ================= BOTÃO SCROLL TOP ================= -->
-    <button id="scrollTopBtn">
+</section>
 
-    <svg class="progress-ring" width="55" height="55">
 
-        <circle
-            class="progress-ring-bg"
-            cx="27.5"
-            cy="27.5"
-            r="24"
-        ></circle>
 
-        <circle
-            class="progress-ring-circle"
-            cx="27.5"
-            cy="27.5"
-            r="24"
-        ></circle>
+<!-- ================= SOBRE ================= -->
 
-    </svg>
+<section id="sobre" class="secao">
 
-    <span class="arrow">↑</span>
+<div class="card-institucional">
+
+<h2>Sobre o Instituto</h2>
+
+<p>
+O Instituto Myra Eliane é um complexo educacional voltado ao desenvolvimento social e humano.
+O espaço reúne creche, centro cultural e centro de capacitação profissional.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ESTRUTURA ================= -->
+
+<section id="estrutura" class="secao fundo">
+
+<h2>Nossa Estrutura</h2>
+
+<div class="cards">
+
+<div class="card" onclick="abrirEstrutura(0)">
+<img src="imagens/creche.jpg">
+<h3>Creche</h3>
+<p>Educação infantil com estrutura moderna.</p>
+</div>
+
+
+<div class="card" onclick="abrirEstrutura(1)">
+<img src="imagens/capacitacao.jpg">
+<h3>Capacitação Profissional</h3>
+<p>Cursos voltados ao mercado de trabalho.</p>
+</div>
+
+
+<div class="card" onclick="abrirEstrutura(2)">
+<img src="imagens/cultural.jpg">
+<h3>Centro Cultural</h3>
+<p>Espaço dedicado à arte e cultura.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= NOTICIAS ================= -->
+
+<section id="noticias" class="secao">
+
+<h2 class="titulo-noticias">Últimas Notícias</h2>
+
+
+<div class="noticias">
+
+
+<div class="noticia" onclick="abrirNoticia(0)">
+
+<img src="imagens/noticia1.jpg">
+
+<h3>
+Espaço Cultural Arandu conclui formações do projeto Barca
+</h3>
+
+<button>Leia Mais →</button>
+
+</div>
+
+
+
+<div class="noticia" onclick="abrirNoticia(1)">
+
+<img src="imagens/noticia2.jpg">
+
+<h3>
+CEI Olga e Parsifal Barroso celebra seis anos de educação
+</h3>
+
+<button>Leia Mais →</button>
+
+</div>
+
+
+
+<div class="noticia" onclick="abrirNoticia(2)">
+
+<img src="imagens/noticia3.jpg">
+
+<h3>
+Centro de Formação realiza projeto Mulheres de Negócios
+</h3>
+
+<button>Leia Mais →</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CONTATO ================= -->
+
+<section id="contato" class="secao fundo">
+
+<h2>Fale Conosco</h2>
+
+<div class="contato-container">
+
+
+<div class="contato-info">
+
+<p><b>Telefone:</b> (85) 3231-2634</p>
+<p><b>Email:</b> contato@myraeliane.org</p>
+<p><b>Instagram:</b> @myraeliane</p>
+
+<iframe
+src="https://maps.google.com/maps?q=Av.%20Central%20Araturi%20Caucaia&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+
+
+<form class="form-contato">
+
+<h3 class="titulo-form">Envie sua mensagem</h3>
+
+<input type="text" placeholder="Seu nome">
+
+<input type="tel" placeholder="Telefone">
+
+<textarea placeholder="Mensagem"></textarea>
+
+<button>Enviar</button>
+
+</form>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= MODAL ================= -->
+
+<div id="modal">
+
+<div class="modal-conteudo">
+
+<span onclick="fecharModal()">✕</span>
+
+<h2 id="modal-titulo"></h2>
+
+<img id="modal-img">
+
+<p id="modal-texto"></p>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= SCROLL ================= -->
+
+<button id="scrollTopBtn">
+
+<svg class="progress-ring" width="50" height="50">
+
+<circle class="progress-ring-bg" cx="25" cy="25" r="23"></circle>
+
+<circle class="progress-ring-circle" cx="25" cy="25" r="23"></circle>
+
+</svg>
+
+<span class="arrow">↑</span>
 
 </button>
 
-    <!-- ================= SCRIPT ================= -->
-    <script src="java/script.js"></script>
+
+
+<script src="java/script.js"></script>
 
 </body>
 </html>
