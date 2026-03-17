@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= CÍRCULO DE PROGRESSO =================
     // ================= CÍRCULO DE PROGRESSO =================
 
-const radius = 26;
+const radius = 23;
 const circumference = 2 * Math.PI * radius;
 
 if (circle) {
