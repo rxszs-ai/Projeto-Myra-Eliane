@@ -443,6 +443,7 @@ color:#fff;
 }
 
 .menu-mobile-btn{
+    
 position:fixed;
 bottom:30px;
 right:30px;
@@ -481,6 +482,18 @@ to{opacity:1;transform:scale(1);}
 
 .menu-mobile-btn{
 display:flex;
+}
+.menu-mobile-btn span{
+
+width:26px;
+height:3px;
+
+background:white;
+
+display:block;
+
+border-radius:3px;
+
 }
 
 /* CONTATO MOBILE CORRIGIDO */
@@ -534,6 +547,594 @@ justify-content:flex-start;
 .noticia{
 flex:0 0 85%;
 scroll-snap-align:center;
+}
+
+}
+
+/* ================= RESET ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"Poppins", sans-serif;
+color:#333;
+background:#eef2ff;
+overflow-x:hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:600;
+}
+
+.logo img{
+height:42px;
+}
+
+nav{
+display:flex;
+gap:28px;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+bottom:-4px;
+left:0;
+width:0;
+height:2px;
+background:#0f2a66;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#0f2a66;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+
+/* ================= BANNER ================= */
+
+.banner{
+margin-top:90px;
+width:100%;
+height:450px;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+
+/* ================= SEÇÕES ================= */
+
+.secao{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 8%;
+max-width:1200px;
+margin:0 auto;
+}
+
+.secao h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.secao p{
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+.fundo{
+background:#e4e9ff;
+border-radius:25px;
+margin:30px auto;
+max-width:1200px;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+gap:35px;
+width:100%;
+}
+
+.card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.35s;
+height:100%;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 18px 40px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+display:block;
+}
+
+.card h3{
+margin-top:15px;
+padding:0 20px;
+font-size:18px;
+}
+
+.card p{
+padding:10px 20px 25px;
+line-height:1.6;
+font-size:15px;
+}
+
+.card.logo img{
+max-height:120px;
+object-fit:contain;
+padding:15px;
+margin:auto;
+}
+
+
+/* ================= NOTICIAS ================= */
+
+.noticias{
+display:flex;
+gap:30px;
+max-width:1100px;
+margin:40px auto;
+justify-content:center;
+align-items:stretch;
+}
+
+.noticia{
+flex:0 0 320px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.noticia:hover{
+transform:translateY(-5px);
+}
+
+.noticia img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.noticia h3{
+padding:15px;
+font-size:18px;
+}
+
+.noticia button{
+margin-bottom:15px;
+padding:8px 16px;
+border:none;
+border-radius:20px;
+background:#0f2a66;
+color:white;
+cursor:pointer;
+}
+
+
+/* ================= MODAL ================= */
+
+#modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal-conteudo{
+background:white;
+padding:40px;
+border-radius:15px;
+max-width:700px;
+width:100%;
+text-align:center;
+position:relative;
+animation:modalOpen 0.3s ease;
+}
+
+.modal-conteudo img{
+width:100%;
+border-radius:10px;
+margin:20px 0;
+}
+
+.modal-conteudo span{
+position:absolute;
+top:15px;
+right:20px;
+font-size:24px;
+cursor:pointer;
+}
+
+
+/* ================= CONTATO ================= */
+
+.contato-container{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+gap:40px;
+margin-top:40px;
+flex-wrap:nowrap;
+}
+
+.contato-info{
+width:50%;
+max-width:500px;
+text-align:left;
+}
+
+.contato-info iframe{
+width:100%;
+height:300px;
+border:none;
+border-radius:15px;
+margin-top:15px;
+}
+
+.form-contato{
+width:50%;
+max-width:500px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.form-contato input,
+.form-contato textarea{
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+font-family:Poppins;
+}
+
+.form-contato textarea{
+height:120px;
+resize:none;
+}
+
+.form-contato button{
+padding:12px;
+border:none;
+border-radius:25px;
+background:#0f2a66;
+color:white;
+cursor:pointer;
+font-weight:500;
+}
+
+.titulo-form{
+font-size:22px;
+margin-bottom:10px;
+color:#0f2a66;
+text-align:left;
+}
+
+
+/* ================= BOTÃO SCROLL ================= */
+
+#scrollTopBtn{
+position:fixed;
+bottom:25px;
+right:25px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+z-index:3000;
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+}
+
+#scrollTopBtn.show{
+opacity:1;
+visibility:visible;
+}
+
+.progress-ring{
+position:absolute;
+top:0;
+left:0;
+width:55px;
+height:55px;
+transform:rotate(-90deg);
+}
+
+.progress-ring-bg{
+fill:none;
+stroke:#eee;
+stroke-width:4;
+}
+
+.progress-ring-circle{
+fill:none;
+stroke:#0f2a66;
+stroke-width:4;
+stroke-dasharray:150.8;
+stroke-dashoffset:150.8;
+transition:stroke-dashoffset 0.1s linear;
+}
+
+.arrow{
+font-size:18px;
+font-weight:bold;
+color:#0f2a66;
+z-index:2;
+}
+
+
+/* ================= MENU MOBILE ================= */
+
+.menu-mobile{
+position:fixed;
+top:0;
+right:-100%;
+width:75%;
+height:100vh;
+background:#ffffff;
+box-shadow:-10px 0 30px rgba(0,0,0,0.1);
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:40px;
+transition:0.4s;
+z-index:5000;
+}
+
+.menu-mobile.ativo{
+right:0;
+}
+
+.menu-mobile-links{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.menu-mobile a{
+text-decoration:none;
+color:#0f2a66;
+font-size:18px;
+font-weight:600;
+padding:16px 25px;
+background:#f5f7ff;
+border-radius:12px;
+transition:0.3s;
+opacity:0;
+transform:translateX(30px);
+}
+
+.menu-mobile.ativo a{
+opacity:1;
+transform:translateX(0);
+}
+
+.menu-mobile a:hover{
+background:#0f2a66;
+color:#fff;
+}
+
+.menu-mobile-btn{
+    
+position:fixed;
+bottom:30px;
+right:30px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:#0f2a66;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:6px;
+cursor:pointer;
+z-index:6000;
+box-shadow:0 6px 20px rgba(0,0,0,0.25);
+}
+
+
+/* ================= ANIMAÇÕES ================= */
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes modalOpen{
+from{opacity:0;transform:scale(0.8);}
+to{opacity:1;transform:scale(1);}
+}
+
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:900px){
+
+.menu-mobile-btn{
+display:flex;
+}
+.menu-mobile-btn span{
+
+width:26px;
+height:3px;
+
+background:white;
+
+display:block;
+
+border-radius:3px;
+
+}
+
+/* CONTATO MOBILE CORRIGIDO */
+
+.contato-container{
+
+flex-direction:row;
+flex-wrap:wrap;
+
+justify-content:center;
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.contato-info,
+.form-contato{
+
+width:48%;
+min-width:280px;
+
+}
+
+.contato-info iframe{
+
+height:220px;
+
+}
+
+}
+
+
+/* ================= CARROSSEL MOBILE ================= */
+
+@media(max-width:700px){
+
+#scrollTopBtn{
+display:none !important;
+}
+
+.noticias{
+overflow-x:auto;
+flex-wrap:nowrap;
+scroll-snap-type:x mandatory;
+-webkit-overflow-scrolling:touch;
+padding:20px;
+justify-content:flex-start;
+}
+
+.noticia{
+flex:0 0 85%;
+scroll-snap-align:center;
+}
+
+}
+
+@media(max-width:900px){
+
+/* garantir que o header apareça */
+header{
+display:flex !important;
+justify-content:center;
+}
+
+/* esconder apenas o menu do topo */
+nav{
+display:none !important;
+}
+
+/* mostrar botão flutuante */
+.menu-mobile-btn{
+display:flex;
+}
+
+/* ajustar logo */
+.logo{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.logo img{
+height:40px;
+}
+
+.logo h2{
+font-size:16px;
 }
 
 }
