@@ -1,134 +1,136 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipamentos - Instituto Myra Eliane</title>
 
-<title>Equipamentos - Instituto Myra Eliane</title>
+    <link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet" href="css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Logo Instituto">
+            <h2>Instituto Myra Eliane</h2>
+        </div>
 
-<div class="logo">
-<img src="imagens/logo.png">
-<h2>Instituto Myra Eliane</h2>
-</div>
+        <!-- MENU DESKTOP -->
+        <nav class="menu-desktop">
+            <a href="index.html">Início</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="equipamentos.html">Equipamentos</a>
+            <a href="index.html#estrutura">Estrutura</a>
+            <a href="index.html#noticias">Notícias</a>
+            <a href="index.html#contato">Fale Conosco</a>
+        </nav>
+    </header>
 
-<nav>
-<a href="index.html">Início</a>
-<a href="index.html#sobre">Sobre</a>
-<a href="equipamentos.html">Equipamentos</a>
-<a href="index.html#estrutura">Estrutura</a>
-<a href="index.html#noticias">Notícias</a>
-<a href="index.html#contato">Fale Conosco</a>
-</nav>
+    <!-- ================= BOTÃO MENU MOBILE ================= -->
+    <button type="button" class="menu-mobile-btn" id="btnMenu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-</header>
+    <!-- ================= MENU MOBILE ================= -->
+    <div class="menu-mobile" id="menuMobile">
+        <div class="menu-mobile-links">
 
-<section class="secao">
+            <a href="index.html" onclick="fecharMenu()">Início</a>
+            <a href="index.html#sobre" onclick="fecharMenu()">Sobre</a>
+            <a href="equipamentos.html" onclick="fecharMenu()">Equipamentos</a>
+            <a href="index.html#estrutura" onclick="fecharMenu()">Estrutura</a>
+            <a href="index.html#noticias" onclick="fecharMenu()">Notícias</a>
+            <a href="index.html#contato" onclick="fecharMenu()">Fale Conosco</a>
 
-<h2>Nossos Equipamentos</h2>
+        </div>
+    </div>
 
-<p>
-O Instituto Myra Eliane reúne espaços voltados à educação, cultura e
-capacitação profissional, promovendo oportunidades de desenvolvimento
-social e humano para a comunidade.
-</p>
+    <!-- ================= INTRO ================= -->
+    <!-- ================= EQUIPAMENTOS ================= -->
+<section class="secao fundo">
 
-</section>
+    <h2>Nossos Equipamentos</h2>
 
-<!-- CEI -->
+    <p>
+        O Instituto Myra Eliane reúne espaços voltados à educação, cultura e
+        capacitação profissional, promovendo oportunidades de desenvolvimento
+        social e humano para a comunidade.
+    </p>
 
-<section class="equipamento">
 
-<div class="equipamento-img">
-<img src="imagens/cei.jpg">
-</div>
+    <!-- CEI -->
+    <div class="equipamento">
+        <img src="imagens/cei.jpg" alt="CEI">
 
-<div class="equipamento-texto">
+        <div class="equipamento-texto">
+            <h2>CEI Olga e Parsifal Barroso</h2>
+            <p>Aguardando Texto</p>
+        </div>
+    </div>
 
-<h2>CEI Olga e Parsifal Barroso</h2>
 
-<p>
-Aguardando Texto
-</p>
+    <!-- CENFOR -->
+    <div class="equipamento">
+        <img src="imagens/yolanda.jpg" alt="Centro de Formação">
 
-</div>
+        <div class="equipamento-texto">
+            <h2>Centro de Formação Profissional</h2>
+            <p>Aguardando Texto</p>
+        </div>
+    </div>
 
-</section>
 
-<!-- CENFOR -->
+    <!-- ARANDU -->
+    <div class="equipamento">
+        <img src="imagens/arandu.jpg" alt="Espaço Cultural">
 
-<section class="equipamento">
-
-<div class="equipamento-texto">
-
-<h2>Centro de Formação Profissional</h2>
-
-<p>
-Aguardando Texto
-</p>
-
-</div>
-
-<div class="equipamento-img">
-<img src="imagens/yolanda.jpg">
-</div>
-
-</section>
-
-<!-- ARANDU -->
-
-<section class="equipamento">
-
-<div class="equipamento-img">
-<img src="imagens/arandu.jpg">
-</div>
-
-<div class="equipamento-texto">
-
-<h2>Espaço Cultural Arandu</h2>
-
-<p>
-Aguardando Texto
-</p>
-
-</div>
+        <div class="equipamento-texto">
+            <h2>Espaço Cultural Arandu</h2>
+            <p>Aguardando Texto</p>
+        </div>
+    </div>
 
 </section>
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© Instituto Myra Eliane</p>
+    </footer>
 
-<footer>
+    <!-- ================= BOTÃO SCROLL ================= -->
+    <button id="scrollTopBtn">
 
-<p>© Instituto Myra Eliane</p>
+    <svg class="progress-ring" width="55" height="55">
 
-</footer>
+        <circle
+            class="progress-ring-bg"
+            cx="27.5"
+            cy="27.5"
+            r="24"
+        ></circle>
 
-<button id="scrollTopBtn">
+        <circle
+            class="progress-ring-circle"
+            cx="27.5"
+            cy="27.5"
+            r="24"
+        ></circle>
 
-<svg class="progress-ring" width="60" height="60">
+    </svg>
 
-<circle class="progress-ring-bg" cx="30" cy="30" r="26"></circle>
-
-<circle class="progress-ring-circle" cx="30" cy="30" r="26"></circle>
-
-</svg>
-
-<span class="arrow">↑</span>
+    <span class="arrow">↑</span>
 
 </button>
 
-<script src="java/script.js"></script>
+    <!-- ================= SCRIPT ================= -->
+    <script src="java/script.js"></script>
 
 </body>
-
 </html>

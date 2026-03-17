@@ -1,35 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Seleção de Elementos
+
+    // ================= SELEÇÃO DE ELEMENTOS =================
     const scrollBtn = document.getElementById("scrollTopBtn");
     const circle = document.querySelector(".progress-ring-circle");
     const modal = document.getElementById("modal");
     const menuMobile = document.getElementById("menuMobile");
+    const btnMenu = document.getElementById("btnMenu");
+    
 
-    // ================= CONFIGURAÇÃO DO CÍRCULO DE PROGRESSO =================
-    // Cálculo baseado em um raio de 23px (para um botão de 50px de largura)
-    const radius = 23; 
-    const circumference = 2 * Math.PI * radius;
-
-    if (circle) {
-        circle.style.strokeDasharray = `${circumference} ${circumference}`;
-        circle.style.strokeDashoffset = circumference;
+    // ================= FUNÇÕES DE MENU =================
+    function abrirMenu() {
+        if (menuMobile) {
+            menuMobile.classList.add("ativo");
+            document.body.style.overflow = "hidden";
+        }
     }
 
-    function setProgress(percent) {
-        if (!circle) return;
-        const offset = circumference - (percent * circumference);
-        circle.style.strokeDashoffset = offset;
+    function fecharMenu() {
+        if (menuMobile && menuMobile.classList.contains("ativo")) {
+            menuMobile.classList.remove("ativo");
+            document.body.style.overflow = "auto";
+        }
     }
 
-    // ================= SCROLL SUAVE (LINKS E BOTÕES) =================
-    window.scrollSection = function(id) {
+    window.toggleMenu = function () {
+        if (menuMobile.classList.contains("ativo")) {
+            fecharMenu();
+        } else {
+            abrirMenu();
+        }
+    };
+
+    // Fecha ao clicar fora
+    document.addEventListener("click", (e) => {
+        if (
+            menuMobile &&
+            menuMobile.classList.contains("ativo") &&
+            !menuMobile.contains(e.target) &&
+            !btnMenu.contains(e.target)
+        ) {
+            fecharMenu();
+        }
+    });
+
+    // ================= SCROLL SUAVE =================
+    window.scrollSection = function (id) {
         const section = document.getElementById(id);
+
         if (section) {
-            // Fecha o menu mobile se estiver aberto ao clicar em um link
-            if (menuMobile && menuMobile.classList.contains("ativo")) {
-                menuMobile.classList.remove("ativo");
-            }
-            
+            fecharMenu(); // 🔥 fecha o menu corretamente
+
             section.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
@@ -37,63 +57,57 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // ================= CONTROLE DO BOTÃO FLUTUANTE (SUBIR) =================
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollTop / scrollHeight;
+    // ================= CÍRCULO DE PROGRESSO =================
+    // ================= CÍRCULO DE PROGRESSO =================
 
-        // Atualiza o progresso visual no círculo
-        setProgress(progress);
+const radius = 26;
+const circumference = 2 * Math.PI * radius;
 
-        // Mostra o botão apenas após rolar 300px (evita poluição visual no início)
-        if (scrollTop > 300) {
-            scrollBtn.style.opacity = "1";
-            scrollBtn.style.visibility = "visible";
-            scrollBtn.style.transform = "scale(1)";
-        } else {
-            scrollBtn.style.opacity = "0";
-            scrollBtn.style.visibility = "hidden";
-            scrollBtn.style.transform = "scale(0.8)";
-        }
-    });
+if (circle) {
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset = circumference;
+}
 
-    if (scrollBtn) {
-        scrollBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
+function setProgress(percent) {
+    if (!circle) return;
+
+    const offset = circumference - percent * circumference;
+    circle.style.strokeDashoffset = offset;
+}
+
+
+// ================= BOTÃO SCROLL TOP =================
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress = scrollTop / scrollHeight;
+
+    setProgress(progress);
+
+    if (scrollTop > 200) {
+        scrollBtn.classList.add("show");
+    } else {
+        scrollBtn.classList.remove("show");
     }
 
-    // ================= MENU MOBILE =================
-    window.toggleMenu = function() {
-    const menuMobile = document.getElementById("menuMobile");
-    const btnMenu = document.getElementById("btnMenu");
-    
-    if (menuMobile) {
-        menuMobile.classList.toggle("ativo");
-        
-        // Bloqueia o scroll da página ao abrir o menu
-        if (menuMobile.classList.contains("ativo")) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
-    }
-};
-
-// Fecha o menu se o usuário clicar na área escura (fora da gaveta)
-document.addEventListener("click", (e) => {
-    const menu = document.getElementById("menuMobile");
-    const btn = document.getElementById("btnMenu");
-    
-    if (menu.classList.contains("ativo") && !menu.contains(e.target) && !btn.contains(e.target)) {
-        toggleMenu();
-    }
 });
-    // ================= SISTEMA DE NOTÍCIAS (MODAL) =================
+
+
+if (scrollBtn) {
+    scrollBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+}
+
+    // ================= SISTEMA DE NOTÍCIAS =================
     const noticias = [
         {
             titulo: "Espaço Cultural Arandu conclui formações",
@@ -112,29 +126,31 @@ document.addEventListener("click", (e) => {
         }
     ];
 
-    window.abrirNoticia = function(index) {
+    window.abrirNoticia = function (index) {
         if (!modal) return;
 
         const info = noticias[index];
+
         document.getElementById("modal-titulo").innerText = info.titulo;
         document.getElementById("modal-img").src = info.img;
         document.getElementById("modal-texto").innerText = info.texto;
 
         modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // Trava o scroll da página ao abrir
+        document.body.style.overflow = "hidden";
     };
 
-    window.fecharModal = function() {
+    window.fecharModal = function () {
         if (modal) {
             modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Libera o scroll
+            document.body.style.overflow = "auto";
         }
     };
 
-    // Fechar modal ao clicar fora do conteúdo
+    // Fecha modal ao clicar fora
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
             fecharModal();
         }
     });
+
 });

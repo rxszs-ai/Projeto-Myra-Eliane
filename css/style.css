@@ -104,11 +104,17 @@ object-fit:cover;
 
 /* ================= SEÇÕES ================= */
 
-.secao{
-padding:110px 8%;
-max-width:1200px;
-margin:auto;
-text-align:center;
+.secao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 110px 20px;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .secao h2{
@@ -126,7 +132,10 @@ line-height:1.6;
 background:#e4e9ff;
 border-radius:25px;
 margin:60px auto;
+
+width:100%;
 max-width:1200px;
+padding:40px;
 }
 
 
@@ -138,9 +147,11 @@ max-width:1200px;
 margin-top:60px;
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+
 gap:35px;
-align-items:stretch;
+
+width:100%;
 }
 
 .card{
@@ -391,49 +402,52 @@ color:#0f2a66;
 text-align:center;
 }
 
-
 /* ================= BOTÃO SCROLL ================= */
 
-/* ================= BOTÃO SCROLL (AGORA FUNCIONA NO MOBILE) ================= */
 #scrollTopBtn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    bottom: 25px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
     border: none;
     border-radius: 50%;
+
     background: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-    z-index: 2000; /* Fica acima de tudo */
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+
+    z-index: 3000;
+
     opacity: 0;
     visibility: hidden;
+
+    transition: 0.3s;
 }
 
-#scrollTopBtn.visible {
+#scrollTopBtn.show {
     opacity: 1;
     visibility: visible;
 }
 
-#scrollTopBtn:hover {
-    transform: translateY(-5px);
-}
-
 .progress-ring {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     transform: rotate(-90deg);
 }
 
 .progress-ring-bg {
     fill: none;
-    stroke: #f0f0f0;
+    stroke: #eee;
     stroke-width: 4;
 }
 
@@ -441,21 +455,19 @@ text-align:center;
     fill: none;
     stroke: #0f2a66;
     stroke-width: 4;
-    stroke-dasharray: 144.5; /* Ajustado para o novo raio */
-    stroke-dashoffset: 144.5;
+
+    stroke-dasharray: 150.8;
+    stroke-dashoffset: 150.8;
+
     transition: stroke-dashoffset 0.1s linear;
 }
 
 .arrow {
     font-size: 18px;
-    color: #0f2a66;
     font-weight: bold;
+    color: #0f2a66;
     z-index: 2;
 }
-
-/* ================= MENU MOBILE (ESTILO) ================= */
-/* ================= NOVO DESIGN MENU MOBILE ================= */
-
 /* ================= MENU MOBILE (GAVETA LATERAL) ================= */
 
 .menu-mobile {
@@ -521,20 +533,31 @@ text-align:center;
 }
 
 /* Ajuste no Botão Hamburguer para não sumir */
-.menu-mobile-btn {
+.menu-mobile-btn{
     position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 3000; /* Sempre acima do menu */
-    width: 45px;
-    height: 45px;
-    background: #0f2a66;
-    border-radius: 8px;
-    display: none; /* Aparece no Mobile via Media Query */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    bottom: 30px;
+    right: 30px;
+    top: auto; /* garante que não fique no topo */
+
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#0f2a66;
+
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+
+    cursor:pointer;
+
+    z-index:1500;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.25);
 }
 
 @media (max-width: 900px) {
@@ -585,15 +608,24 @@ transform:scale(1);
 
 @media(max-width:900px){
 
-header{
-flex-direction:column;
-gap:10px;
+.equipamento {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
 }
 
-nav{
-flex-wrap:wrap;
-justify-content:center;
+.equipamento img {
+    width: 100%;
+    max-width: 320px;
 }
+
+.equipamento-texto {
+    text-align: center;
+}
+
+}
+
+
 
 .secao{
 padding:80px 6%;
@@ -605,8 +637,6 @@ grid-template-columns:repeat(2,1fr);
 
 .contato-container{
 grid-template-columns:1fr;
-}
-
 }
 
 
@@ -650,26 +680,66 @@ padding:25px;
 
 @media(max-width:900px){
 
-.equipamento{
-flex-direction:column !important;
-align-items:center;
-text-align:center;
-gap:30px;
+/* ================= EQUIPAMENTOS ================= */
+
+.equipamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 40px auto;
+    padding: 25px 30px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
 }
 
-.equipamento:nth-child(even){
-flex-direction:column !important;
+.equipamento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-.equipamento-img{
-width:100%;
+
+/* imagem menor */
+
+.equipamento img {
+    width: 280px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
-.equipamento-img img{
-width:100%;
-max-width:500px;
+
+/* texto */
+
+.equipamento-texto {
+    max-width: 500px;
+    text-align: left;
 }
 
+.equipamento-texto h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0f2a66;
+}
+
+.equipamento-texto p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.equipamento:hover {
+    transform: translateY(-5px);
 }
 
 /* ================= ESCONDER SCROLL NO MOBILE ================= */
@@ -718,7 +788,7 @@ background:white;
 border-radius:2px;
 }
 
-@media(max-width:900px){
+@media(max-width:900px){}
 
 .menu-mobile-btn{
 display:flex;
@@ -728,4 +798,15 @@ display:flex;
 display:none;
 }
 
+}
+
+@media(max-width:900px){}
+header{
+flex-direction:column;
+gap:10px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
 }
