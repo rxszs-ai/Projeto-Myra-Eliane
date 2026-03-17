@@ -406,7 +406,7 @@ flex-direction:column;
 justify-content:center;
 padding:40px;
 transition:0.4s;
-z-index:2500;
+z-index:5000;
 }
 
 .menu-mobile.ativo{
@@ -457,7 +457,7 @@ justify-content:center;
 align-items:center;
 gap:6px;
 cursor:pointer;
-z-index:1500;
+z-index:6000;
 box-shadow:0 6px 20px rgba(0,0,0,0.25);
 }
 
@@ -483,8 +483,32 @@ to{opacity:1;transform:scale(1);}
 display:flex;
 }
 
+/* CONTATO MOBILE CORRIGIDO */
+
 .contato-container{
-flex-direction:column;
+
+flex-direction:row;
+flex-wrap:wrap;
+
+justify-content:center;
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.contato-info,
+.form-contato{
+
+width:48%;
+min-width:280px;
+
+}
+
+.contato-info iframe{
+
+height:220px;
+
 }
 
 }
