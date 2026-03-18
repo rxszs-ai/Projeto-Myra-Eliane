@@ -192,6 +192,8 @@ window.abrirEstrutura = function(index){
     });
 
       /* ================= BOTÃO LER MAIS ================= */
+//* ================= BOTÃO LER MAIS ================= */
+
 window.mostrarMais = function() {
 
 const sobre = document.getElementById("sobre");
@@ -209,8 +211,6 @@ if (sobre.style.display !== "none") {
     setTimeout(() => {
         sobreCompleto.classList.add("ativo");
     }, 10);
-
-    info.classList.add("ativo");
 
     boxes.forEach((box, index) => {
 
@@ -234,7 +234,7 @@ if (sobre.style.display !== "none") {
 
 } else {
 
-    // FECHAR COM ANIMAÇÃO
+    // FECHAR
 
     sobreCompleto.classList.remove("ativo");
 
@@ -263,6 +263,4 @@ if (sobre.style.display !== "none") {
 
 }
 
-}
-
-})
+}})
