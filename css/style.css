@@ -21,6 +21,26 @@ overflow-x:hidden;
 
 /* ================= HEADER ================= */
 
+.btn-lermais,
+.btn-voltar{
+
+background:#2c7be5;
+color:white;
+border:none;
+padding:10px 20px;
+margin-top:15px;
+cursor:pointer;
+border-radius:6px;
+
+}
+
+.btn-lermais:hover,
+.btn-voltar:hover{
+
+background:#1a5fd1;
+
+}
+
 header{
 position:fixed;
 top:0;
@@ -118,8 +138,6 @@ margin-bottom:15px;
 }
 
 .secao p{
-max-width:700px;
-margin:auto;
 line-height:1.6;
 }
 
@@ -334,6 +352,94 @@ font-size:22px;
 margin-bottom:10px;
 color:#0f2a66;
 text-align:left;
+}
+
+.btn-whatsapp{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+margin:15px auto;
+padding:14px 22px;
+
+background:linear-gradient(135deg, #25D366, #1ebe5d);
+color:white;
+
+text-decoration:none;
+font-weight:600;
+font-size:16px;
+
+border-radius:50px;
+
+box-shadow:0 8px 20px rgba(37, 211, 102, 0.35);
+
+transition:all 0.3s ease;
+position:relative;
+overflow:hidden;
+}
+
+/* efeito brilho */
+.btn-whatsapp::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+transition:0.5s;
+}
+
+.btn-whatsapp:hover::before{
+left:100%;
+}
+
+.btn-whatsapp:hover{
+transform:translateY(-2px) scale(1.02);
+box-shadow:0 12px 25px rgba(37, 211, 102, 0.5);
+}
+
+@media(max-width:600px){
+
+.btn-whatsapp{
+width:100%;              /* ocupa toda largura */
+max-width:320px;        /* limite bonito */
+font-size:15px;
+
+padding:14px 18px;
+
+margin:20px auto;       /* centraliza */
+display:flex;
+}
+
+}
+
+/* brilho animado */
+.btn-whatsapp::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+
+background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+transition:0.5s;
+}
+
+.btn-whatsapp:hover::before{
+left:100%;
+}
+
+.btn-whatsapp:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 12px 25px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:active{
+transform:scale(0.97);
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -1173,5 +1279,124 @@ height:auto;
 text-align:center;
 
 }
+
+}
+
+.texto-sobre{
+max-width:700px;
+margin:auto;
+
+font-size:16px;
+line-height:1.8;
+
+text-align:justify;
+text-justify:inter-word;
+
+
+}
+
+/* ===== SOBRE ===== */
+
+#sobre-completo {
+max-width:1200px;
+margin:auto;
+}
+
+.mais-info{
+
+display:grid;
+
+grid-template-columns:repeat(3, 1fr);
+
+gap:30px;
+
+margin-top:50px;
+
+width:100%;
+
+@media(max-width:1000px){
+
+.mais-info{
+grid-template-columns:repeat(2, 1fr);
+}
+
+}
+
+@media(max-width:700px){
+
+.mais-info{
+grid-template-columns:1fr;
+}
+
+}
+
+.info-box{
+
+width:100%;
+margin:0;
+
+}
+
+}
+
+.info-box {
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+text-align:justify;
+text-justify:inter-word;
+
+hyphens:auto;
+-webkit-hyphens:auto;
+-ms-hyphens:auto;
+
+transition:0.3s;
+
+display:flex;
+flex-direction:column;
+height:100%;
+
+}
+
+.info-box:hover {
+
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+
+}
+
+.info-box h3 {
+
+color:#0f2a66;
+margin-bottom:10px;
+
+}
+
+.info-box p {
+
+line-height:1.7;
+
+}
+
+/* animação abrir / fechar sobre */
+
+#sobre-completo{
+
+opacity:0;
+transform:translateY(40px);
+transition:all 0.5s ease;
+
+}
+
+#sobre-completo.ativo{
+
+opacity:1;
+transform:translateY(0);
 
 }

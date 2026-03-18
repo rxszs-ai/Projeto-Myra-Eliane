@@ -191,4 +191,78 @@ window.abrirEstrutura = function(index){
         }
     });
 
-});
+      /* ================= BOTÃO LER MAIS ================= */
+window.mostrarMais = function() {
+
+const sobre = document.getElementById("sobre");
+const sobreCompleto = document.getElementById("sobre-completo");
+const info = document.getElementById("mais-info");
+const boxes = info.querySelectorAll(".info-box");
+
+if (sobre.style.display !== "none") {
+
+    // ABRIR
+
+    sobre.style.display = "none";
+    sobreCompleto.style.display = "block";
+
+    setTimeout(() => {
+        sobreCompleto.classList.add("ativo");
+    }, 10);
+
+    info.classList.add("ativo");
+
+    boxes.forEach((box, index) => {
+
+        box.style.opacity = 0;
+        box.style.transform = "translateY(30px)";
+
+        setTimeout(() => {
+
+            box.style.transition = "0.4s";
+            box.style.opacity = 1;
+            box.style.transform = "translateY(0)";
+
+        }, index * 120);
+
+    });
+
+    window.scrollTo({
+        top: sobreCompleto.offsetTop - 80,
+        behavior: "smooth"
+    });
+
+} else {
+
+    // FECHAR COM ANIMAÇÃO
+
+    sobreCompleto.classList.remove("ativo");
+
+    boxes.forEach((box, index) => {
+
+        setTimeout(() => {
+
+            box.style.opacity = 0;
+            box.style.transform = "translateY(30px)";
+
+        }, index * 80);
+
+    });
+
+    setTimeout(() => {
+
+        sobreCompleto.style.display = "none";
+        sobre.style.display = "block";
+
+        window.scrollTo({
+            top: sobre.offsetTop - 80,
+            behavior: "smooth"
+        });
+
+    }, 400);
+
+}
+
+}
+
+})
