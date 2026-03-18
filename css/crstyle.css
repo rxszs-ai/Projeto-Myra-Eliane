@@ -1,0 +1,188 @@
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins, sans-serif;
+
+}
+
+
+/* TOPO */
+
+.topo{
+
+background:#0f2a66;
+color:white;
+
+padding:15px 30px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.btn-voltar{
+
+color:white;
+text-decoration:none;
+background:#2c7be5;
+
+padding:8px 15px;
+border-radius:6px;
+
+transition:0.3s;
+
+}
+
+.btn-voltar:hover{
+
+background:#1a5fd1;
+
+}
+
+
+/* TOPO AZUL */
+
+.creditos-topo{
+
+padding:60px 20px;
+
+text-align:center;
+
+background:linear-gradient(135deg,#0f2a66,#2c7be5);
+
+color:white;
+
+}
+
+.creditos-topo h1{
+
+font-size:40px;
+margin-bottom:10px;
+
+}
+
+.creditos-topo p{
+
+max-width:700px;
+margin:auto;
+
+line-height:1.7;
+
+}
+
+
+
+/* CAIXA CENTRAL */
+
+.creditos-box{
+
+max-width:1100px;
+
+margin:40px auto;
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+text-align:center;
+
+}
+
+
+
+.creditos-box h2{
+
+color:#0f2a66;
+
+margin-bottom:20px;
+
+}
+
+
+
+/* GRID */
+
+.lista-creditos{
+
+display:grid;
+
+grid-template-columns:repeat(6,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+
+/* CARD */
+
+.credito{
+
+background:#f5f7ff;
+
+padding:12px;
+
+border-radius:10px;
+
+font-weight:500;
+
+border:1px solid #e0e6ff;
+
+transition:0.3s;
+
+}
+
+.credito:hover{
+
+transform:translateY(-5px);
+
+background:#e4e9ff;
+
+}
+
+
+
+/* RESPONSIVO */
+
+@media(max-width:1000px){
+
+.lista-creditos{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.lista-creditos{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+.banner img{
+
+transition:0.3s;
+
+}
+
+.banner img:hover{
+
+opacity:0.9;
+transform:scale(1.01);
+
+}

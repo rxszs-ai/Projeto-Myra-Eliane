@@ -1416,3 +1416,123 @@ display:inline-block;
 }
 
 }
+
+/* ================= CREDITOS ================= */
+
+.texto-creditos{
+
+max-width:700px;
+
+margin:10px auto;
+
+line-height:1.7;
+
+text-align:center;
+
+font-size:16px;
+
+}
+
+
+
+.titulo-equipe{
+
+margin-top:40px;
+
+text-align:center;
+
+color:#0f2a66;
+
+font-size:22px;
+
+}
+
+
+
+/* GRID DOS NOMES */
+
+.lista-creditos{
+
+display:grid;
+
+grid-template-columns:repeat(6,1fr);
+
+gap:15px;
+
+max-width:1100px;
+
+margin:30px auto;
+
+padding:10px;
+
+}
+
+
+
+/* CARD NOME */
+
+.credito{
+
+background:white;
+
+padding:15px;
+
+border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+text-align:center;
+
+font-size:14px;
+
+transition:0.3s;
+
+border:1px solid #e5e5e5;
+
+}
+
+
+
+/* HOVER */
+
+.credito:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* RESPONSIVO TABLET */
+
+@media(max-width:1000px){
+
+.lista-creditos{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+
+
+/* RESPONSIVO CELULAR */
+
+@media(max-width:600px){
+
+.lista-creditos{
+
+grid-template-columns:1fr;
+
+}
+
+.texto-creditos{
+
+padding:0 10px;
+
+}
+
+}

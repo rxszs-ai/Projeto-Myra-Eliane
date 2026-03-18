@@ -110,9 +110,9 @@ if (scrollBtn) {
     // ================= SISTEMA DE NOTÍCIAS =================
     const noticias = [
         {
-            titulo: "Espaço Cultural Arandu conclui formações",
-            img: "imagens/noticia1.jpg",
-            texto: "O Espaço Cultural Arandu concluiu formações do projeto Barca em parceria com a Porto Iracema das Artes, promovendo o desenvolvimento artístico na região."
+            titulo: "Nova Turma de Desenvolvimento Web",
+            img: "imagens/noticia1.jpeg",
+            texto: "O Instituto Yolanda e Edson Queiroz iniciou uma nova turma de Desenvolvimento Web, voltada à capacitação dos alunos na área de tecnologia e à preparação para o mercado de trabalho."
         },
         {
             titulo: "CEI Olga e Parsifal Barroso celebra seis anos",
